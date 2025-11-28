@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Bank Transfer</h2>
+
+    <form method="POST" action="/bank-transfer">
+        <input type="hidden" name="sender" value="{{ name }}">
+
+        <input type="text" name="receipent" placeholder="Receiver Name" required>
+
+        <input type="number" name="amount" placeholder="Amount" required>
+
+        <button type="submit" style="display:block; margin:auto; margin-top:15px;">
+            Send Money
+        </button>
+
+        <!-- LOGIN STYLE ERROR MESSAGE (INSIDE FORM) -->
+        {% if error %}
+        <p style="color:red; text-align:center; margin-top:12px; font-weight:bold;">
+            {{ error }}
+        </p>
+        {% endif %}
+
+        <!-- LOGIN STYLE SUCCESS MESSAGE (INSIDE FORM) -->
+        {% if success %}
+        <p style="color:green; text-align:center; margin-top:12px; font-weight:bold;">
+            {{ success }}
+        </p>
+        {% endif %}
+    </form>
+
+    <a href="/dashboard?name={{ name }}">
+        <button class="back-btn">Back</button>
+    </a>
+</div>
+
+</body>
+</html>

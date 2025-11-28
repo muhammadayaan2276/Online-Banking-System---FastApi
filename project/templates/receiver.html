@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="/static/styles.css"></head>
+<body>
+
+<div class="container">
+    <h2>Receiver Authenticated</h2>
+
+    <div class="balance-box">
+        <h3>{{ name }} new balance:</h3>
+        <h1>${{ balance }}</h1>
+    </div>
+
+    {% if from_sender and amount_received %}
+    <p style="color:green; font-weight:bold; text-align:center; margin-top:10px;">
+        ✅ You received ${{ amount_received }} from {{ from_sender }}!
+    </p>
+    {% endif %}
+
+    <a href="/">
+        <button class="back-btn">Home</button>
+    </a>
+</div>
+
+</body>
+</html>

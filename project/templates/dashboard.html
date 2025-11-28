@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Welcome, {{ name }}</h2>
+
+    <div class="balance-box">
+        <h3>Your Balance</h3>
+        <h1>${{ balance }}</h1>
+    </div>
+
+    <a href="/bank-transfer?name={{ name }}">
+        <button>Bank Transfer</button>
+    </a>
+     
+    <button class="back-btn" onclick="window.location.href='/'">Back</button>
+</div>
+
+</body>
+</html>
